@@ -1,0 +1,12 @@
+apiVersion: v1 # version which is an object has some preset in there (EX: Pod belong to this version)
+kind: Pod # type of preset. contains one or more containers (running) with similar purpose, tight integration, close relationship.
+metadata:
+  name: client-pod 
+  labels:
+    component:  web
+spec:
+  containers:
+    - name: client
+      image: nqthai95/multi-client-sample
+      ports:
+        - containerPort: 3000
