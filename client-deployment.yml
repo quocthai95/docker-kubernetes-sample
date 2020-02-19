@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1 # specify the number of different pod that it creates
+  selector:   # handle the label below
+    matchLabels:
+      component: web
+  template: # declare every pod that is created by this deployment
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: nqthai95/multi-client-sample
+          ports:
+            - containerPort: 3000

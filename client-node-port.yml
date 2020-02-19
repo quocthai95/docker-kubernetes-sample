@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 3000
-    targetPort: 3000
-    nodePort: 31515
+  - port: 3000 # for other pods can access to this pod
+    targetPort: 3000 # container port in pod file
+    nodePort: 31515 # url for outside enter in browser ( always be 30000 - 32767)
   selector:
-    component:  web
+    component:  web  # connect to pod have the correct selector

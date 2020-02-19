@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: nqthai95/multi-client-sample
+      image: nqthai95/multi-worker-sample
       ports:
         - containerPort: 3000
